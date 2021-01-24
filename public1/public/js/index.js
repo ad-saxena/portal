@@ -41,6 +41,16 @@ var firebaseConfig = {
       
     }
   });
+  function logout(){
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
+
+
+
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -49,7 +59,7 @@ var firebaseConfig = {
       // ...
     } else {
       // User is signed out
-      window.location="./login.html";
+      window.location="./index.html";
       // ...
     }
   });

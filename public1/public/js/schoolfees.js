@@ -49,7 +49,7 @@ var firebaseConfig = {
       // ...
     } else {
       // User is signed out
-      window.location="./login.html";
+      window.location="./index.html";
       // ...
     }
   });

@@ -53,7 +53,7 @@ var firebaseConfig = {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user) => {
         window.alert("Thanks! for signup");
-        window.location = "./login.html";
+        window.location = "./index.html";
       // Signed in 
       // ...
     })
