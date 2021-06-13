@@ -1,7 +1,9 @@
 function d_t(){
-    dt=new Date($.now());
+   dt=new Date($.now());
 }
-
+var email_id="";
+var email_ID ="";
+var date ="";
 var firebaseConfig = {
     apiKey: "AIzaSyDG0hh0kfi83_zY0zPihlYK020gGvPv5_w",
     authDomain: "trimurticonventschool.firebaseapp.com",
@@ -19,20 +21,29 @@ var firebaseConfig = {
   
     if (user) {
       // User is signed in.
-
       
       
 
       var user = firebase.auth().currentUser;
       if(user != null){
-          var email_id = user.uid;
+        d_t();
+          User_ID = user.uid;
+          Email_ID = user.email;
+          date = dt;
         //   window.location = 'index.html';
           $('.uid').html('hello');
         //   document.getElementById("user_para").innerHTML = "welcome user : " + email_id
-          console.log(email_id);
+          
+          email_id = User_ID;
+          email_ID = Email_ID;
+        //   firebase.database().ref('LoginRecord/'+email_id+'/Date/'+date).set({
+        //     EmailID:email_ID,
+        //     UserId:email_id,
+        //     Date: date
+
+        // });
+
       }
-
-
 
     } else {
       // No user is signed in.
@@ -48,6 +59,7 @@ var firebaseConfig = {
       // An error happened.
     });
   }
+  
 
 
 

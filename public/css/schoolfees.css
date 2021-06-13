@@ -35,6 +35,13 @@ html {
     border-radius: 4px;
     resize: vertical;
   }
+  input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
   
   label {
     padding: 12px 12px 12px 0;
@@ -129,7 +136,7 @@ html {
     display: table !important;
 }
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    margin-top: 6rem !important;
+    margin-top: 0rem !important;
 }
 .box{
     border-radius: 2%;
@@ -141,4 +148,76 @@ html {
     }
 body{
     font-size: 0.85rem !important;
+}
+.img-logo{
+  max-width:20%;
+  height:auto;
+}
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  margin-bottom: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: bold;
+  color: #7e2114;
+}
+.adbtn{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.5em;
+}
+.boxx-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  margin-bottom: 2%;
+  margin-top: 1%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: bold;
+  color: #7e2114;
+  font-size: medium;
+}
+.table{
+  width: 75%!important;
+}
+@media print {
+  header, footer, aside{
+      display: none;
+  }
+  html{
+    padding-right: 300%;
+    background-color: #f2f2ff;
+  }
+  body{
+    padding-right: 50%;
+  }
+  .table{
+    width: 75%;
+  }
+  form{
+    border: 2px;
+    border: maroon;
+      border-radius: 31px;
+  }
+}
+.adclose{
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0.5em;
+  margin-left: 90%;
+  width: 5rem;
 }

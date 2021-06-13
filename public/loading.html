@@ -21,8 +21,8 @@
   </head>
   <body>
     <div id="user_div" class="userloggedin-div">
-      <h3>welcome user </h3>
-      <p id="user_para" >login successful</p>
+      <!-- <h3>welcome user </h3>
+      <p id="user_para" >login successful</p> -->
         <!-- <button onclick="userlogout()">logout</button> -->
     </div>
       <style>
@@ -133,6 +133,12 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script> 
 
     <script>
+      function d_t(){
+          dt=new Date($.now());
+        }
+        var email_id="";
+        var email_ID ="";
+        var date ="";
         var firebaseConfig = {
         apiKey: "AIzaSyDG0hh0kfi83_zY0zPihlYK020gGvPv5_w",
         authDomain: "trimurticonventschool.firebaseapp.com",
@@ -153,8 +159,30 @@
 
             var user = firebase.auth().currentUser;
             if(user != null){
-                var email_id = user.uid;
-                window.location = 'home.html';
+              d_t();
+                email_id = user.uid;
+                email_ID = user.email;
+                date = dt;
+                firebase.database().ref('LoginRecord/'+email_id+'/'+date).set({
+                EmailID:email_ID,
+                UserId:email_id,
+                Date: date
+
+            });
+            firebase.database().ref('LoginRecord/'+email_id+'/'+date).set({
+              EmailID:email_ID,
+                UserId:email_id,
+                Date: date
+              }, (error) => {
+                if (error) {
+                  // The write failed...
+                } else {
+                  // Data saved successfully!
+                  window.location="./home.html";
+                }
+              });
+
+                // window.location = 'home.html';
                 $('.uid').html('hello');
                 //   document.getElementById("user_para").innerHTML = "welcome user : " + email_id
                 console.log(email_id);
